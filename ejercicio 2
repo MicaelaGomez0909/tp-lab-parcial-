@@ -1,0 +1,89 @@
+using System.Transactions;
+
+CuentaBancaria cuenta1 = new CuentaBancaria(200,"Activo", 10);
+CuentaBancaria cuenta2= new CuentaBancaria(300,"Activo",5);
+
+
+//prueba de cuenta1
+
+Console.WriteLine("Prueba Cuenta1");
+Console.WriteLine("Saldo inicial");
+cuenta1.mostrarSaldoActual();
+cuenta1.depositar(2000);
+cuenta1.extraer(500);
+
+Console.WriteLine("\nSaldo despues de extraccion y deposito");
+cuenta1.mostrarSaldoActual();
+
+cuenta1.AbonaInteres();
+Console.WriteLine("Saldo despues de abonar interes");
+cuenta1.mostrarSaldoActual();
+
+//prueba de cuenta2
+Console.WriteLine("Prueba Cuenta2");
+Console.WriteLine("Saldo inicial");
+cuenta2.mostrarSaldoActual();
+cuenta2.depositar(2000);
+cuenta2.extraer(500);
+
+Console.WriteLine("\nSaldo despues de extraccion y deposito");
+cuenta2.mostrarSaldoActual();
+
+cuenta2.AbonaInteres();
+Console.WriteLine("Saldo despues de abonar interes");
+cuenta2.mostrarSaldoActual();
+
+
+//clases
+
+class CuentaBancaria
+{
+
+    protected double saldo;
+    protected string estado;
+    protected double interes;
+
+    public CuentaBancaria(double saldo, string estado, double interes)
+    {
+        this.saldo = saldo;
+        this.estado = estado;
+        this.interes = interes;
+       
+    }
+    public void extraer(double cantidad)
+    {
+        if (cantidad > 0 && cantidad <= this.saldo)
+        {
+            this.saldo -= cantidad;
+            Console.WriteLine("Extraccion realizada");
+        }
+        else { Console.WriteLine("El monto a retirar excede el saldo de la cuenta"); }
+
+    }
+
+    public void depositar(double cantidad)
+    {
+        if (cantidad > 0)
+        {
+            this.saldo += cantidad;
+            Console.WriteLine("\nDeposito realizado ");
+        }
+        else { Console.WriteLine("Ingese numero positivo "); }
+
+    }
+
+
+
+    public void mostrarSaldoActual()
+    {
+        Console.WriteLine("Su saldo es = {0:C2} ", this.saldo);
+    }
+
+    public void AbonaInteres(){
+        this.saldo -= (this.saldo * this.interes) / 100;
+        Console.WriteLine("\nInteres abonado ");
+    }
+
+
+
+}
