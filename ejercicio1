@@ -1,0 +1,50 @@
+empleado empleado1 = new empleado("Micaela", "Gomez",200);
+empleado empleado2 = new empleado("Cristian", "Diaz", 500);
+
+empleado1.pruebaEmpleado();
+empleado1.salarioAnual();
+empleado1.aumento();
+
+
+empleado2.pruebaEmpleado();
+empleado2.salarioAnual();
+empleado2.aumento();
+
+
+class empleado
+{
+    protected string nombre { get; set; }
+    protected string apellido { get; set; }
+    protected double salarioMensual { get; set; }
+
+
+    public empleado() { }
+
+    public empleado(string nombre, string apellido, double salarioMensual)
+    {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        
+        if(salarioMensual >= 0){
+            this.salarioMensual = salarioMensual;
+        }
+       
+    }
+    public void pruebaEmpleado()
+    {
+        Console.WriteLine("\n Nombre: "+ this.nombre);
+        Console.WriteLine("Apellio: " + this.apellido);
+        Console.WriteLine("Salario Mensual: " + this.salarioMensual);
+    }
+
+    public void salarioAnual(){
+        Console.WriteLine("\n Salario Anual: " + (this.salarioMensual*12));
+    }
+
+    public void aumento(){
+        double aumento = (this.salarioMensual*10/100);
+    Console.WriteLine("\n Salario Anual (con aumento): " + (this.salarioMensual+aumento)*12);
+    }
+
+   
+}
