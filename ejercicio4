@@ -1,0 +1,86 @@
+using System.Threading;
+using System.Transactions;
+
+rectangulo rectangulo1 = new rectangulo();
+
+
+rectangulo1.perimetro();
+rectangulo1.area();
+
+
+//clases
+
+class rectangulo
+{
+
+    protected double longitud = 1;
+    protected double anchura = 1;
+
+    public rectangulo()
+    {
+        Console.WriteLine("\n Ingrese longitud: ");
+        this.longitud = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("\n Ingrese anchura: ");
+        this.anchura = Convert.ToDouble(Console.ReadLine());
+
+    }
+
+    public rectangulo(double longitud, double anchura)
+    {
+        this.longitud = longitud;
+        this.anchura = anchura;
+        
+    }
+
+    public double getlongitud()
+    {
+        return longitud;
+    }
+
+    public double getanchura()
+    {
+        return anchura;
+    }
+
+    public void setlongitud(double longitud)
+    {
+        if(longitud> 0.0 && longitud< 20.0)
+        {
+            this.longitud = longitud;
+        }
+        else {
+            Console.WriteLine("\n Longitud incorrecta: ");
+        }
+    }
+
+    public void setanchura(double anchura)
+    {
+        if (anchura > 0.0 && anchura < 20.0)
+        {
+            this.anchura = anchura;
+        }
+        else
+        {
+            Console.WriteLine("\n Anchura incorrecta: ");
+        }
+    }
+
+    
+
+    public void perimetro()
+    {
+        double perimetro = 0;
+        perimetro = 2 * this.longitud + 2 * this.anchura;
+        Console.WriteLine("\n Perimetro: " + perimetro);
+
+    }
+
+    public void area()
+    {
+        double area = 0;
+        area =this.longitud * this.anchura;
+        Console.WriteLine("\n Area: " + area);
+
+    }
+}
