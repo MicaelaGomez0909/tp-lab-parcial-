@@ -1,0 +1,71 @@
+using System;
+using System.Transactions;
+
+factura factura1 = new factura(1, 21, "Cable", 10,10.5);
+factura factura2 = new factura(2,32, "Tornillo", 15,2);
+
+
+factura1.pruebaFactura();
+factura1.obtenerMontoFactura();
+
+factura2.pruebaFactura();
+factura2.obtenerMontoFactura();
+
+
+
+
+//clases
+
+class factura
+{
+
+    protected int numFactura { get; set; }
+    protected int numArticulo { get; set; }
+    protected string descripcion { get; set; }
+    protected int cantidad { get; set; }
+    protected double precio { get; set; }
+
+    public factura(int numFactura, int numArticulo, string descripcion, int cantidad, double precio)
+    {
+        this.numFactura = numFactura;
+        this.numArticulo = numArticulo;
+        this.descripcion = descripcion;
+        if (cantidad < 0)
+        {
+            this.cantidad = 0;
+        }
+        else
+        {
+            this.cantidad = cantidad;
+        }
+        if (precio < 0)
+        {
+            this.precio = 0.0;
+        }
+        else
+        {
+            this.precio = precio;
+        }
+    }
+
+    public void obtenerMontoFactura()
+    {
+        double monto = 0;
+        monto = this.cantidad * this.precio;
+        Console.WriteLine("\n           Precio Total: " + monto);
+
+    }
+
+    public void pruebaFactura()
+    {
+        Console.WriteLine("\n          Numero Factura: " + this.numFactura);
+        Console.WriteLine("\nNumero Articulo: " + this.numArticulo);
+        Console.WriteLine("\nDescripcion: " + this.descripcion);
+        Console.WriteLine("\nCantidad: " + this.cantidad);
+        Console.WriteLine("\nPrecio por uniddad: " + this.precio);
+
+
+
+
+    }
+}
