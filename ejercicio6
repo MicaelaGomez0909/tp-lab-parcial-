@@ -1,0 +1,56 @@
+/*ventas vendedor1= new ventas();
+
+
+
+class ventas
+{
+
+    //public double ingresos = 2000;
+    public int articulo { get; set; }
+    //public List<int> articulos { get; set; }
+    public int cantidad { get; set; }
+    //public List<int> cantidades { get; set; }
+    public string vendedor { get; set; }*/
+    /*public List<int> listaArt = new List<int>()
+    {
+        1,2,3,4
+    };
+    public List<double> listaPrecio = new List<double>()
+    {
+        7239.99, 9129.75, 6899.95,13150.89
+    };*/
+
+
+    /*public ventas(string vendedor, int articulo, int cantidad)
+    {
+        this.vendedor = vendedor;
+        this.articulo = articulo;
+        this.cantidad = cantidad;
+    }*/
+
+    
+    
+    /*public ventas()
+    {
+        Console.WriteLine("\nIngrese nombre vendedor");
+        this.vendedor = Console.ReadLine();
+       for(int i=1; i < 5; i++)
+        {
+            Console.WriteLine("\nDia " + i+": ");
+            do
+            {
+                Console.WriteLine("Ingrese articulo vendido ");
+                this.articulo = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Ingrese cantidad de art vendido ");
+                this.cantidad = Convert.ToInt32(Console.ReadLine());
+
+
+                Console.WriteLine("Ingrese 0 para pasar al siguiente dia ");
+            } while (this.articulo!=0);
+        }
+
+        
+        Console.WriteLine("Ingresos de vendedor "+this.vendedor+"= "+ingresos);
+
+    }*/
