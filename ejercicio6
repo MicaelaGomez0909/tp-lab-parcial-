@@ -1,3 +1,42 @@
+using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
+
+double ingresos = 2000;
+string vendedor;
+int articulo;
+int cantidad;
+List<int> listaArt = new List<int>()
+    {
+        1,2,3,4
+    };
+List<double> listaPrecio = new List<double>()
+    {
+        7239.99, 9129.75, 6899.95,13150.89
+    };
+
+
+Console.WriteLine("\nIngrese nombre vendedor");
+vendedor = Console.ReadLine();
+for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine("\nDia " + i + ": ");
+    do
+    {
+        Console.WriteLine("Ingrese articulo vendido ");
+        articulo = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ingrese cantidad de art vendido ");
+        cantidad = Convert.ToInt32(Console.ReadLine());
+
+        ingresos += listaPrecio[articulo-1] * cantidad;
+
+        Console.WriteLine("Ingrese 0 para pasar al siguiente dia ");
+    } while (articulo != 0);
+}
+
+
+Console.WriteLine("Ingresos de vendedor " + vendedor + "= " + ingresos);
+
 /*ventas vendedor1= new ventas();
 
 
