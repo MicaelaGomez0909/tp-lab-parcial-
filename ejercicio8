@@ -1,0 +1,48 @@
+cuentaDeAhorros ahorrador1 = new cuentaDeAhorros(20000.00);
+cuentaDeAhorros ahorrador2 = new cuentaDeAhorros(30000.00);
+
+for(int i = 1; i < =12; i++)
+{
+    Console.WriteLine("Mes " + i + ": ");
+    Console.WriteLine("Ahorrador 1: ");
+    ahorrador1.CalcularInteresMensual();
+    Console.WriteLine("Ahorrador 2: ");
+    ahorrador2.CalcularInteresMensual();
+}
+cuentaDeAhorros.modificarTasaInteres(5);
+
+Console.WriteLine("Ahorrador 1: ");
+ahorrador1.CalcularInteresMensual();
+Console.WriteLine("Ahorrador 2: ");
+ahorrador2.CalcularInteresMensual();
+//clases
+
+class cuentaDeAhorros
+{
+
+    protected double saldoAhorros { get; set; }
+    static double tasaInteresAnual=0.04;
+    public int interes { get; set; }
+
+    public cuentaDeAhorros(double saldoAhorros)
+    {
+        this.saldoAhorros = saldoAhorros;
+       
+    }
+
+    public static void modificarTasaInteres(int interes)
+    {
+        tasaInteresAnual = interes;
+    }
+
+    public void CalcularInteresMensual()
+    {
+        double InteresMensual = 0;
+        InteresMensual = this.saldoAhorros * (tasaInteresAnual / 12);
+        this.saldoAhorros += InteresMensual;
+        Console.WriteLine("\nSaldo actual: " + this.saldoAhorros);
+    }
+
+
+    
+}
