@@ -1,0 +1,177 @@
+using System.Threading;
+using System.Transactions;
+
+fecha  fecha1= new fecha();
+
+
+fecha1.mostrarFecha();
+
+
+//clases
+
+class fecha
+{
+
+    protected int mes { get; set; }
+    protected int dia { get; set; }
+    protected int año { get; set; }
+
+    public fecha()
+    {
+        Console.WriteLine("\n Ingrese dia: ");
+        this.dia = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("\n Ingrese mes: ");
+        this.mes = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("\n Ingrese año: ");
+        this.año = Convert.ToInt32(Console.ReadLine());
+
+    }
+
+    public fecha(int dia, int mes, int año)
+    {
+        if (mes >= 1 && mes <= 12)
+        {
+            this.mes = mes;
+            if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+            {
+                if (dia >= 1 && dia <= 31)
+                {
+                    this.dia = dia;
+                }
+                else
+                {
+                    Console.WriteLine("\n Dia incorrecto: ");
+                }
+
+            }
+            else if (mes == 2)
+            {
+                this.mes = mes;
+                if (dia >= 1 && dia <= 28)
+                {
+                    this.dia = dia;
+                }
+                else
+                {
+                    Console.WriteLine("\n Dia incorrecto: ");
+                }
+            }
+            else
+            {
+                if (dia >= 1 && dia <= 30)
+                {
+                    this.dia = dia;
+                }
+                else
+                {
+                    Console.WriteLine("\n Dia incorrecto: ");
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("\n Mes incorreto: ");
+        }
+
+        if (año > 0 && año <= 2100)
+        {
+            this.año = año;
+        }
+
+
+
+    }
+
+
+
+    public void mostrarFecha()
+    {
+        int opcion = this.mes;
+        Console.WriteLine("\n 0" + this.dia + "/" + this.mes + "/" + this.año);
+
+        switch (opcion)
+        {
+            case 1:
+                Console.WriteLine("\n Enero " + this.dia + ", " + this.año);
+                break;
+            case 2:
+                Console.WriteLine("\n Febrero " + this.dia + ", " + this.año);
+                break;
+            case 3:
+                Console.WriteLine("\n Marzo " + this.dia + ", " + this.año);
+                break;
+            case 4:
+                Console.WriteLine("\n Abril " + this.dia + ", " + this.año);
+                break;
+            case 5:
+                Console.WriteLine("\n Mayo " + this.dia + ", " + this.año);
+                break;
+            case 6:
+                Console.WriteLine("\n Junio " + this.dia + ", " + this.año);
+                break;
+            case 7:
+                Console.WriteLine("\n Julio " + this.dia + ", " + this.año);
+                break;
+            case 8:
+                Console.WriteLine("\n Agosto " + this.dia + ", " + this.año);
+                break;
+            case 9:
+                Console.WriteLine("\n Septiembre " + this.dia + ", " + this.año);
+                break;
+            case 10:
+                Console.WriteLine("\n Octubre " + this.dia + ", " + this.año);
+                break;
+            case 11:
+                Console.WriteLine("\n Novienmbre " + this.dia + ", " + this.año);
+                break;
+            case 12:
+                Console.WriteLine("\n Diciembre " + this.dia + ", " + this.año);
+                break;
+        }
+
+        switch (opcion)
+        {
+            case 1:
+                Console.WriteLine("\n "+this.dia+ " Enero " + this.año);
+                break;
+            case 2:
+                Console.WriteLine("\n" + this.dia + " Febrero " + this.año);
+                break;
+            case 3:
+                Console.WriteLine("\n" + this.dia + " Marzo " + this.año);
+                break;
+            case 4:
+                Console.WriteLine("\n" + this.dia + " Abril " + this.año);
+                break;
+            case 5:
+                Console.WriteLine("\n" + this.dia + " Mayo " + this.año);
+                break;
+            case 6:
+                Console.WriteLine("\n" + this.dia + " Junio " + this.año);
+                break;
+            case 7:
+                Console.WriteLine("\n" + this.dia + " Julio " + this.año);
+                break;
+            case 8:
+                Console.WriteLine("\n" + this.dia + " Agosto " + this.año);
+                break;
+            case 9:
+                Console.WriteLine("\n" + this.dia + " Septiembre " + this.año);
+                break;
+            case 10:
+                Console.WriteLine("\n" + this.dia + " Octubre " + this.año);
+                break;
+            case 11:
+                Console.WriteLine("\n" + this.dia + " Noviembre " + this.año);
+                break;
+            case 12:
+                Console.WriteLine("\n" + this.dia + " Diciembre " + this.año);
+                break;
+
+
+        }
+
+    }
+}
